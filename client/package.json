@@ -13,6 +13,7 @@
     "react-scripts": "4.0.3",
     "react-world-flags": "^1.4.0",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.9",
     "shallowequal": "^1.1.0"
   },
   "devDependencies": {

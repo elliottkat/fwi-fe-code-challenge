@@ -2,10 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Flags from 'react-world-flags';
 
+import { useDispatch } from 'react-redux';
+
+import { deletePlayerSuccess } from '../appState/actions';
+
 import Avatar from '../Avatar';
 import { COUNTRIES } from '../constants';
 
 const TableBody = ({ players }) => {
+  const dispatch = useDispatch();
+
   return (
     <table
       id="player-table-body"
@@ -34,6 +40,23 @@ const TableBody = ({ players }) => {
                 </Avatar>
                 {country}
               </div>
+            </td>
+            <td>
+              <button
+                onClick={() =>
+                  dispatch(
+                    deletePlayerSuccess({
+                      id,
+                      name,
+                      country,
+                      winnings,
+                      imageUrl,
+                    })
+                  )
+                }
+              >
+                Delete User
+              </button>
             </td>
           </tr>
         ))}
