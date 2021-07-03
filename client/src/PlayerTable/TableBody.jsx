@@ -1,17 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Flags from 'react-world-flags';
 
-import { useDispatch } from 'react-redux';
-
-import { deletePlayerSuccess } from '../appState/actions';
-
-import Avatar from '../Avatar';
 import { COUNTRIES } from '../constants';
+import Avatar from '../Avatar';
+import { AddEditPlayerForm } from '../PlayerForms/AddEditPlayerForm';
+import { ConfirmPlayerDelete } from '../PlayerForms/ConfirmPlayerDelete';
 
 const TableBody = ({ players }) => {
   const dispatch = useDispatch();
-
   return (
     <table
       id="player-table-body"
@@ -41,22 +40,34 @@ const TableBody = ({ players }) => {
                 {country}
               </div>
             </td>
-            <td>
+            <td className="table__button">
               <button
-                onClick={() =>
-                  dispatch(
-                    deletePlayerSuccess({
-                      id,
-                      name,
-                      country,
-                      winnings,
-                      imageUrl,
-                    })
-                  )
-                }
-              >
-                Delete User
-              </button>
+                className="button-edit"
+                onClick={() => {
+                  ReactDOM.render(
+                    <AddEditPlayerForm
+                      player={{ id, name, country, winnings }}
+                      dispatch={dispatch}
+                    />,
+                    document.querySelector('#root')
+                  );
+                }}
+              />
+            </td>
+            <td className="table__button">
+              <button
+                className="button-delete"
+                onClick={() => {
+                  ReactDOM.render(
+                    <ConfirmPlayerDelete
+                      id={id}
+                      name={name}
+                      dispatch={dispatch}
+                    />,
+                    document.querySelector('#root')
+                  );
+                }}
+              />
             </td>
           </tr>
         ))}

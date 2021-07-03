@@ -1,0 +1,40 @@
+@import 'src/variables';
+
+.formContainer {
+  margin: auto;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 8px grey;
+  width: 40%;
+}
+
+.playerFormInput {
+  align-content: start;
+  font-size: 16px;
+  padding: 12px 20px 12px;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  border-radius: 8px;
+  width: 70%;
+  outline: none;
+}
+
+.playerFormLabel {
+  align-content: start;
+  display: inline-block;
+  width: 140px;
+}
+
+.playerFormButton {
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 8px;
+  width: 10%;
+  background-color: $blue-steel;
+  align-self: center;
+}
