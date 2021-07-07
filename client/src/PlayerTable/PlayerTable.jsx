@@ -16,7 +16,7 @@ const PlayerTable = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     (async function fetchPlayers() {
-      const response = await fetch('http://localhost:3001/players', {
+      const response = await fetch('http://localhost:3001/players?size=10000', {
         headers: {
           Accept: 'application/json',
         },
