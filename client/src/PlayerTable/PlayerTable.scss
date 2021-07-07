@@ -53,8 +53,13 @@ $header-height: 2.5rem;
     width: 4rem;
   }
 
+  &__button {
+    text-align: center;
+    width: 4rem;
+  }
+
   &__player {
-    width: 100%;
+    width: 75%;
   }
 
   &__winnings {
@@ -76,4 +81,22 @@ $header-height: 2.5rem;
   .avatar {
     margin-right: 0.5rem;
   }
+}
+
+.button-edit {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url(../imgs/icon-edit.png) no-repeat;
+  border: 0;
+}
+
+.button-delete {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background: url(../imgs/icon-delete.png) no-repeat;
+  border: 0;
 }
